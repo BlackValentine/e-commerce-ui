@@ -1,4 +1,3 @@
-import PagePermissionDenied from 'layout/PermissionDenied';
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 
@@ -32,7 +31,7 @@ const ProtectedRoutes = (props: ProtectedRouteType) => {
 
   //if the role required is there or not
   if (props.roleRequired) {
-    return auth ? props.roleRequired === role ? <Outlet /> : <PagePermissionDenied /> : <Navigate to="/landing" />;
+    return auth ? props.roleRequired === role ? <Outlet /> : <div>Hello world</div> : <Navigate to="/landing" />;
   } else {
     return auth ? <Outlet /> : <Navigate to="/landing" />;
   }

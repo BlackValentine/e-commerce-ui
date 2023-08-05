@@ -1,6 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { HttpMethod } from 'ts/enum/http';
-import { EnumPathRouters } from 'ts/enum/menu';
 
 interface ArgumentInterceptor {
   isHandleCommonRes?: boolean; // Optional
@@ -47,7 +46,6 @@ const createAxiosInstance = (config: ArgumentInterceptor) => {
           return await instance(originalRequest);
         } catch (error) {
           console.error(error);
-          window.location.href = EnumPathRouters.login;
         }
       }
 
