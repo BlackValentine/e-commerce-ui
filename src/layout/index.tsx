@@ -1,3 +1,5 @@
+import Footer from 'components/gereral/Footer';
+import Header from 'components/gereral/Header';
 import React, { useEffect, useRef } from 'react';
 import { Outlet } from 'react-router-dom';
 
@@ -20,9 +22,11 @@ export default function InnerContent() {
     <>
       <div className="min-h-full">
         <main>
+          <Header />
           <div className="mx-auto">
             <Outlet />
           </div>
+          <Footer />
         </main>
       </div>
     </>

@@ -5,7 +5,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#4A3AFF",
+        'primary-dark': "#103A32",
+        'primary-light': '#069668',
+        'grayish-orange': '#57534E',
+        'light-grayish-orange': '#E7E5E4',
+        'light-text': '#D6D3D1',
+        'primary-bg': '#F7F6F3',
+        'eerie-black': '#1C1917',
+        'sandstone': '#78716C'
       },
       backgroundImage: {
         Hero: "url('assets/Hero.png')",
