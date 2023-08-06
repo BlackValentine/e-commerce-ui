@@ -17,6 +17,9 @@ module.exports = {
       backgroundImage: {
         Hero: "url('assets/Hero.png')",
       },
+      gridTemplateColumns: {
+        '1/3': '1fr 3fr'
+      }
     },
   },
   plugins: [],

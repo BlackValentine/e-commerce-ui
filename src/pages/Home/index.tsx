@@ -10,7 +10,7 @@ import Background1 from '../../assets/images/background1.jpg';
 
 export default function Home() {
   return (
-    <div className="bg-primary-bg">
+    <>
       <div className="grid grid-cols-2">
         <div className="flex flex-col items-center bg-primary-dark gap-3">
           <img className="w-[360px] py-20" src={BigLogo} alt="logo" />
@@ -45,6 +45,6 @@ export default function Home() {
           <button className="mt-8 bg-white px-8 py-3 rounded-md font-family-courier hover:opacity-80">Read our story</button>
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,7 +1,7 @@
 export enum EnumPathRouters {
   home = '/home',
   coffee = '/coffee',
-  shop = '/shop',
+  collections = '/collections',
   wholesale = '/wholesale',
   media = '/media',
   partners = '/partners',

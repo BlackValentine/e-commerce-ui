@@ -23,7 +23,7 @@ export default function InnerContent() {
       <div className="min-h-full">
         <main>
           <Header />
-          <div className="mx-auto">
+          <div className="mx-auto bg-primary-bg">
             <Outlet />
           </div>
           <Footer />

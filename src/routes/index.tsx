@@ -16,7 +16,7 @@ const MainRoutes = () => (
       <Route path="/" element={<Navigate replace to={EnumPathRouters.home} />} />
       <Route path={EnumPathRouters.home} element={<Home />} />
       <Route path={EnumPathRouters.coffee} element={<Coffee />} />
-      <Route path={EnumPathRouters.shop} element={<Shop />} />
+      <Route path={EnumPathRouters.collections} element={<Shop />} />
       <Route path={EnumPathRouters.wholesale} element={<WholeSale />} />
       <Route path={EnumPathRouters.media} element={<Media />} />
       <Route path={EnumPathRouters.partners} element={<Partners />} />

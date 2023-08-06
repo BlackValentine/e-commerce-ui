@@ -18,7 +18,7 @@ export default function Header() {
     },
     {
       label: 'Shop',
-      path: '/shop',
+      path: '/collections',
     },
     {
       label: 'Wholesale',
