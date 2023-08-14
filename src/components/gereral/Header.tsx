@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../assets/svg/logo.svg';
 import Search from '../../assets/svg/search.svg';
 import Account from '../../assets/svg/account.svg';
@@ -7,6 +7,7 @@ import Cart from '../../assets/svg/cart.svg';
 import CartDrawer from './CartDrawer';
 
 export default function Header() {
+  const navigate = useNavigate();
   const headerList = [
     {
       label: 'Home',
@@ -41,8 +42,10 @@ export default function Header() {
           <div></div>
           <p className="text-white text-center">Free Shipping on orders over $80</p>
           <div className="flex items-center justify-end gap-5 text-white">
-            <button>Create an account</button>
-            <button className="border-l border-solid border-grayish-orange pl-5">Sign in</button>
+            <button onClick={() => navigate('/account/register')}>Create an account</button>
+            <button onClick={() => navigate('/account/login')} className="border-l border-solid border-grayish-orange pl-5">
+              Sign in
+            </button>
           </div>
         </div>
       </div>
