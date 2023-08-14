@@ -5,9 +5,16 @@ import Search from '../../assets/svg/search.svg';
 import Account from '../../assets/svg/account.svg';
 import Cart from '../../assets/svg/cart.svg';
 import CartDrawer from './CartDrawer';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'store';
+import { setIsOpenCart } from 'store/features/generalSlice';
 
 export default function Header() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const isOpenCart = useSelector((state: RootState) => state.general.isOpenCart);
+
   const headerList = [
     {
       label: 'Home',
@@ -17,10 +24,10 @@ export default function Header() {
       label: 'Coffee',
       path: '/coffee',
     },
-    {
-      label: 'Shop',
-      path: '/collections',
-    },
+    // {
+    //   label: 'Shop',
+    //   path: '/collections',
+    // },
     {
       label: 'Wholesale',
       path: '/wholesale',
@@ -36,7 +43,7 @@ export default function Header() {
   ];
   return (
     <>
-      <CartDrawer />
+      <CartDrawer isOpenCart={isOpenCart} />
       <div className="flex bg-primary-dark py-2 text-sm">
         <div className="grid grid-cols-3 max-w-7xl w-full mx-auto">
           <div></div>
@@ -68,10 +75,10 @@ export default function Header() {
           <div className="flex items-center">
             <div className="flex items-center gap-5 pr-5">
               <img className="h-6 cursor-pointer hover:opacity-80" src={Search} alt="search" />
-              <img className="h-6 cursor-pointer hover:opacity-80" src={Account} alt="account" />
+              <img onClick={() => navigate('/account/login')} className="h-6 cursor-pointer hover:opacity-80" src={Account} alt="account" />
             </div>
             <div className="flex items-center gap-2 border-l border-solid border-light-grayish-orange pl-5">
-              <img className="h-6 cursor-pointer hover:opacity-80" src={Cart} alt="cart" />
+              <img onClick={() => dispatch(setIsOpenCart(true))} className="h-6 cursor-pointer hover:opacity-80" src={Cart} alt="cart" />
               <div className="flex bg-primary-light h-6 w-6 rounded">
                 <span className="m-auto text-light-text text-xs">0</span>
               </div>

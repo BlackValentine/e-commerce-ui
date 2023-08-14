@@ -1,7 +1,15 @@
 import React from 'react';
 import { Drawer } from 'antd';
+import { useDispatch } from 'react-redux';
+import { setIsOpenCart } from 'store/features/generalSlice';
 
-export default function CartDrawer() {
+interface ICartDrawer {
+  isOpenCart: boolean;
+}
+
+export default function CartDrawer({ isOpenCart }: ICartDrawer) {
+  const dispatch = useDispatch();
+
   const renderFooter = () => {
     return (
       <div className="flex flex-col items-center p-4">
@@ -11,15 +19,11 @@ export default function CartDrawer() {
         </div>
         <p className="text-sm text-sandstone mb-3">Shipping and discounts calculated at checkout.</p>
         <button className="bg-primary-light text-lg w-full py-3 text-white rounded mb-2">Checkout</button>
-        <button>or Continue shopping →</button>
+        <button onClick={() => dispatch(setIsOpenCart(false))}>or Continue shopping →</button>
       </div>
     );
   };
   return (
-    <Drawer title="Your Cart" placement="right" open={false} footer={renderFooter()} width={'30%'}>
-      <p>Some contents...</p>
-      <p>Some contents...</p>
-      <p>Some contents...</p>
-    </Drawer>
+    <Drawer onClose={() => dispatch(setIsOpenCart(false))} title="Your Cart" placement="right" open={isOpenCart} footer={renderFooter()} width={'30%'}></Drawer>
   );
 }
