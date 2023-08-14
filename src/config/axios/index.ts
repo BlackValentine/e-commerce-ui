@@ -17,6 +17,9 @@ const createAxiosInstance = (config: ArgumentInterceptor) => {
   const instance = axios.create({
     baseURL,
     timeout,
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
   });
 
   instance.interceptors.request.use(
@@ -24,6 +27,7 @@ const createAxiosInstance = (config: ArgumentInterceptor) => {
       const token = localStorage.getItem('token');
       if (token) {
         config.headers.Authorization = `${process.env.REACT_APP_PREFIX_TOKEN_KEY} ${token}`;
+        config.headers['Content-Type'] = 'multipart/form-data';
       }
       return config;
     },
@@ -34,7 +38,7 @@ const createAxiosInstance = (config: ArgumentInterceptor) => {
 
   instance.interceptors.response.use(
     async (response) => {
-      return response?.data;
+      return response;
     },
     async (error) => {
       const originalRequest = error.config;

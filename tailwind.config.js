@@ -19,7 +19,10 @@ module.exports = {
       },
       gridTemplateColumns: {
         '1/3': '1fr 3fr'
-      }
+      },
+      aspectRatio: {
+        '3/4': '3 / 4',
+      },
     },
   },
   plugins: [],
