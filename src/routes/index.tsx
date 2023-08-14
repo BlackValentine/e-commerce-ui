@@ -12,6 +12,9 @@ import ProductDetail from 'pages/Detail';
 import ManageProduct from 'pages/ManageProduct';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Register from 'pages/Login/Register';
+import Login from 'pages/Login/Login';
+import ResetPassword from 'pages/Login/ResetPassword';
 
 const MainRoutes = () => (
   <>
@@ -27,6 +30,9 @@ const MainRoutes = () => (
         <Route path={EnumPathRouters.partners} element={<Partners />} />
         <Route path={`${EnumPathRouters.products}/:id`} element={<ProductDetail />} />
         <Route path={'/admin/manage'} element={<ManageProduct />} />
+        <Route path={'/account/register'} element={<Register />} />
+        <Route path={'/account/login'} element={<Login />} />
+        <Route path={'/account/reset-password'} element={<ResetPassword />} />
       </Route>
     </Routes>
   </>
