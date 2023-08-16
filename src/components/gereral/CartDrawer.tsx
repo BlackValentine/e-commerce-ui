@@ -20,12 +20,17 @@ export default function CartDrawer({ isOpenCart }: ICartDrawer) {
         </div>
         <p className="text-sm text-sandstone mb-3">Shipping and discounts calculated at checkout.</p>
         <button className="bg-primary-light text-lg w-full py-3 text-white rounded mb-2">Checkout</button>
-        <button onClick={() => dispatch(setIsOpenCart(false))}>or Continue shopping →</button>
+        <button className='text-primary-light' onClick={() => dispatch(setIsOpenCart(false))}>or Continue shopping →</button>
       </div>
     );
   };
   return (
     <Drawer onClose={() => dispatch(setIsOpenCart(false))} title="Your Cart" placement="right" open={isOpenCart} footer={renderFooter()} width={'25%'}>
+      <CartItem />
+      <CartItem />
+      <CartItem />
+      <CartItem />
+      <CartItem />
       <CartItem />
       <CartItem />
       <CartItem />

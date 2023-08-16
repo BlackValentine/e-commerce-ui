@@ -25,7 +25,7 @@ export default function Home() {
           <img className="w-[360px] py-20" src={BigLogo} alt="logo" />
         </div>
         <div className="relative h-full bg-gray-900 bg-opacity-75">
-          <img className="absolute h-full overflow-hidden object-cover w-full" src={Image1} alt="" />
+          <img className="absolute h-full overflow-hidden object-cover w-full" src={Image1} alt="background" />
         </div>
       </div>
       <div className="max-w-7xl w-full mx-auto py-24">
@@ -45,7 +45,7 @@ export default function Home() {
       </div>
       <div className="relative bg-green-800 lg:py-32 px-6 py-16 sm:px-12 lg:px-16">
         <div className="absolute inset-0 overflow-hidden">
-          <img className="w-full h-full object-top object-cover" src={Background1} alt="" />
+          <img className="w-full h-full object-top object-cover" src={Background1} alt="background" />
         </div>
         <div className="absolute inset-0 bg-gray-900 bg-opacity-50"></div>
         <div className="relative max-w-5xl mx-auto flex flex-col items-center lg:text-center">
