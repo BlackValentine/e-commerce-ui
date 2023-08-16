@@ -5,7 +5,7 @@ export default function ResetPassword() {
   const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center max-w-[500px] mx-auto py-20">
-      <h1 className="mb-6 text-6xl font-family-justice">Account Login</h1>
+      <h1 className="mb-6 text-6xl font-family-caver">Account Login</h1>
       <div className="w-full">
         <h3 className="text-primary-dark font-bold uppercase mb-1">Reset your password</h3>
         <p className="text-primary-light mb-3">We will send you an email to reset your password</p>

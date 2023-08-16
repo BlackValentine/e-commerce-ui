@@ -6,7 +6,7 @@ export default function Login() {
 
   return (
     <div className="flex flex-col items-center max-w-[500px] mx-auto py-20">
-      <h1 className="mb-6 text-6xl font-family-justice">Account Login</h1>
+      <h1 className="mb-6 text-6xl font-family-caver">Account Login</h1>
       <div className="w-full flex flex-col mb-4">
         <span className="text-sm text-primary-dark">Email</span>
         <input className="py-2 px-4 rounded border border-solid border-light-grayish-orange" type="text" placeholder="Email" />

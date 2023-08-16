@@ -18,7 +18,8 @@ module.exports = {
         Hero: "url('assets/Hero.png')",
       },
       gridTemplateColumns: {
-        '1/3': '1fr 3fr'
+        '1/3': '1fr 3fr',
+        '1/2': '1fr 2fr',
       },
       aspectRatio: {
         '3/4': '3 / 4',

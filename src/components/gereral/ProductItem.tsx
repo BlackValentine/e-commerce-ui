@@ -20,7 +20,7 @@ export default function ProductItem({ image, name, id }: IProductItem) {
         src={image}
         alt="product"
       />
-      <h3 className="text-eerie-black text-2xl uppercase font-family-justice">{name}</h3>
+      <h3 className="text-eerie-black text-2xl uppercase font-family-caver">{name}</h3>
       <button onClick={() => handleDetailProduct(id)} className="text-primary-light text-sm">
         More info →
       </button>

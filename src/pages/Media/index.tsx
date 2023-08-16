@@ -11,8 +11,8 @@ export default function Media() {
   return (
     <div className="max-w-7xl mx-auto grid grid-cols-1/3 gap-10 py-20">
       <div className="flex flex-col">
-        <h3 className="text-6xl font-family-justice text-primary-dark">PODCASTS & RELEVANT NEWS</h3>
-        <p className="text-eerie-black text-sm mt-4">Learn more about our causes and how we&apos;re helping veterans move forward.</p>
+        <h3 className="text-6xl font-family-caver text-primary-dark">PODCASTS & RELEVANT NEWS</h3>
+        <p className="text-primary-light text-sm mt-4">Learn more about our causes and how we&apos;re helping veterans move forward.</p>
       </div>
       <div className="grid grid-cols-2 gap-x-10 gap-y-20">
         <MediaItem

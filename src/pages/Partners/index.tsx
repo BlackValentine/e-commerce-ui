@@ -10,7 +10,7 @@ import Partner6 from '../../assets/images/partner6.jpg';
 export default function Partners() {
   return (
     <div className="max-w-7xl mx-auto grid grid-cols-1/3 gap-10 py-20">
-      <h3 className="text-6xl font-family-justice text-primary-dark">Partners</h3>
+      <h3 className="text-6xl font-family-caver text-primary-dark">Partners</h3>
       <div className="grid grid-cols-2 gap-x-10 gap-y-20">
         <PartnerItem
           image={Partner1}

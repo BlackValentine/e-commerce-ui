@@ -105,7 +105,7 @@ export default function ProductDrawer({ isOpen, setIsOpen }: IProductDrawer) {
           onChange={(e) => handleChange('description', e)}
         />
       </div>
-      <h6 className="mt-4 font-family-justice text-lg underline text-primary-light">INVENTORY:</h6>
+      <h6 className="mt-4 font-family-caver text-lg underline text-primary-light">INVENTORY:</h6>
       <div className="flex flex-col">
         <div className="flex items-end">
           <span className="min-w-[50px]">250g:</span>

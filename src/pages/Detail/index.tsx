@@ -30,21 +30,21 @@ export default function ProductDetail() {
           <img className="absolute inset-0 h-full w-full object-cover" src={productField?.image} alt="product" />
         </div>
         <div className="flex flex-col">
-          <h3 className="font-family-justice mb-1 text-6xl uppercase">{productField?.name}</h3>
+          <h3 className="font-family-caver mb-1 text-6xl uppercase">{productField?.name}</h3>
           <span className="text-primary-light text-xs">Crafted by Two 14 Coffee Co.</span>
           <p className="text-sandstone text-sm my-4">{productField?.description}</p>
           <div className="flex border-t border-b border-solid border-black">
             <div className="w-1/2 flex flex-col py-5">
-              <h6 className="text-eerie-black text-lg font-family-justice">ROAST</h6>
+              <h6 className="text-eerie-black text-lg font-family-caver">ROAST</h6>
               <p className="text-sandstone text-sm">{productField?.roast}</p>
             </div>
             <div className="w-1/2 flex flex-col pl-5 border-l border-dashed border-black py-5">
-              <h6 className="text-eerie-black text-lg font-family-justice">ORIGIN</h6>
+              <h6 className="text-eerie-black text-lg font-family-caver">ORIGIN</h6>
               <p className="text-sandstone text-sm">{productField?.origin}</p>
             </div>
           </div>
           <div className="w-full flex flex-col py-5 border-b border-solid border-black">
-            <h6 className="text-eerie-black text-lg font-family-justice">TASTE</h6>
+            <h6 className="text-eerie-black text-lg font-family-caver">TASTE</h6>
             <p className="text-sandstone text-sm">{productField?.taste}</p>
           </div>
 
@@ -55,9 +55,8 @@ export default function ProductDetail() {
                 <button
                   onClick={() => setBagSizeChoice(inventoryItem.size)}
                   key={inventoryItem.id}
-                  className={`px-5 py-1 mr-5 mb-3 rounded-full text-sm ${
-                    bagSizeChoice === inventoryItem.size ? 'bg-primary-light text-white' : 'border border-solid border-light-grayish-orange'
-                  }`}
+                  className={`px-5 py-1 mr-5 mb-3 rounded-full text-sm ${bagSizeChoice === inventoryItem.size ? 'bg-primary-light text-white' : 'border border-solid border-light-grayish-orange'
+                    }`}
                 >
                   {inventoryItem.size}
                 </button>
@@ -72,9 +71,8 @@ export default function ProductDetail() {
                 <button
                   onClick={() => setGrindTypeChoice(grindTypeItem)}
                   key={index}
-                  className={`px-5 py-1 mr-5 mb-3 rounded-full text-sm border border-solid ${
-                    grindTypeChoice === grindTypeItem ? 'bg-primary-light text-white border-primary-light' : 'border-light-grayish-orange'
-                  }`}
+                  className={`px-5 py-1 mr-5 mb-3 rounded-full text-sm border border-solid ${grindTypeChoice === grindTypeItem ? 'bg-primary-light text-white border-primary-light' : 'border-light-grayish-orange'
+                    }`}
                 >
                   {grindTypeItem}
                 </button>
