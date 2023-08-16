@@ -14,6 +14,7 @@ export default function Header() {
   const dispatch = useDispatch();
 
   const isOpenCart = useSelector((state: RootState) => state.general.isOpenCart);
+  const cartRedux = useSelector((state: RootState) => state.cart.cart);
 
   const headerList = [
     {
@@ -80,7 +81,7 @@ export default function Header() {
             <div className="flex items-center gap-2 border-l border-solid border-light-grayish-orange pl-5">
               <img onClick={() => dispatch(setIsOpenCart(true))} className="h-6 cursor-pointer hover:opacity-80" src={Cart} alt="cart" />
               <div className="flex bg-primary-light h-6 w-6 rounded">
-                <span className="m-auto text-light-text text-xs">0</span>
+                <span className="m-auto text-light-text text-xs">{cartRedux.length}</span>
               </div>
             </div>
           </div>

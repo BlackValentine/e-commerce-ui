@@ -1,12 +1,17 @@
 import { getProductById } from 'config/axios/product';
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { addToCart } from 'store/features/cartSlice';
+import { setIsOpenCart } from 'store/features/generalSlice';
 
 export default function ProductDetail() {
+  const dispatch = useDispatch();
   const { id } = useParams();
 
   const [bagSizeChoice, setBagSizeChoice] = useState<string>('');
   const [grindTypeChoice, setGrindTypeChoice] = useState<string>('');
+  const [quantity, setQuantity] = useState<number>(0);
   const [productField, setProductField] = useState<any>({
     inventories: [],
   });
@@ -21,8 +26,28 @@ export default function ProductDetail() {
       }
     })();
   }, []);
-  //
+
   const grindTypeList = ['Whole Beans', 'Chemex', 'Commercial', 'Domestic', 'Filter', 'Plunger', 'Stovetop', 'Turkish', 'V60'];
+
+  const handleChangeQuantity = (e: any) => {
+    setQuantity(+e.target.value);
+  };
+
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        id: productField.id,
+        name: productField.name,
+        grindType: grindTypeChoice,
+        size: bagSizeChoice,
+        price: productField.price,
+        quantity: quantity,
+        image: productField.image,
+      })
+    );
+    dispatch(setIsOpenCart(true));
+  };
+
   return (
     <div className="max-w-7xl w-full mx-auto">
       <div className="grid grid-cols-2 gap-20 py-20">
@@ -55,8 +80,9 @@ export default function ProductDetail() {
                 <button
                   onClick={() => setBagSizeChoice(inventoryItem.size)}
                   key={inventoryItem.id}
-                  className={`px-5 py-1 mr-5 mb-3 rounded-full text-sm ${bagSizeChoice === inventoryItem.size ? 'bg-primary-light text-white' : 'border border-solid border-light-grayish-orange'
-                    }`}
+                  className={`px-5 py-1 mr-5 mb-3 rounded-full text-sm ${
+                    bagSizeChoice === inventoryItem.size ? 'bg-primary-light text-white' : 'border border-solid border-light-grayish-orange'
+                  }`}
                 >
                   {inventoryItem.size}
                 </button>
@@ -71,8 +97,9 @@ export default function ProductDetail() {
                 <button
                   onClick={() => setGrindTypeChoice(grindTypeItem)}
                   key={index}
-                  className={`px-5 py-1 mr-5 mb-3 rounded-full text-sm border border-solid ${grindTypeChoice === grindTypeItem ? 'bg-primary-light text-white border-primary-light' : 'border-light-grayish-orange'
-                    }`}
+                  className={`px-5 py-1 mr-5 mb-3 rounded-full text-sm border border-solid ${
+                    grindTypeChoice === grindTypeItem ? 'bg-primary-light text-white border-primary-light' : 'border-light-grayish-orange'
+                  }`}
                 >
                   {grindTypeItem}
                 </button>
@@ -83,12 +110,18 @@ export default function ProductDetail() {
           <div className="flex items-end gap-10 mt-5">
             <div className="flex flex-col">
               <span className="mb-1 text-sm font-family-courier">Quantity</span>
-              <input className="border border-solid border-light-grayish-orange outline-none px-2 py-2 text-sm rounded" type="number" />
+              <input
+                onChange={(e) => handleChangeQuantity(e)}
+                className="border border-solid border-light-grayish-orange outline-none px-2 py-2 text-sm rounded"
+                type="number"
+              />
             </div>
             <span className="text-xl text-primary-light">${productField?.price / 100}.00</span>
           </div>
 
-          <button className="w-full bg-primary-light text-white py-3 mt-5 rounded hover:opacity-80">Add to cart</button>
+          <button onClick={handleAddToCart} className="w-full bg-primary-light text-white py-3 mt-5 rounded hover:opacity-80">
+            Add to cart
+          </button>
         </div>
       </div>
     </div>
