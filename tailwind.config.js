@@ -12,7 +12,11 @@ module.exports = {
         'light-text': '#D6D3D1',
         'primary-bg': '#F7F6F3',
         'eerie-black': '#1C1917',
-        'sandstone': '#78716C'
+        'sandstone': '#78716C',
+        'general-border': '#DEDEDE',
+        'gray93': '#EDEDED',
+        'gray40': '#666666',
+        'danger': '#df1b41'
       },
       backgroundImage: {
         Hero: "url('assets/Hero.png')",
@@ -20,6 +24,7 @@ module.exports = {
       gridTemplateColumns: {
         '1/3': '1fr 3fr',
         '1/2': '1fr 2fr',
+        '4/3': '4fr 3fr',
       },
       aspectRatio: {
         '3/4': '3 / 4',
